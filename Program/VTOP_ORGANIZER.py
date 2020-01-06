@@ -13,7 +13,7 @@ for i in validFiles:
         folderName = m.group(1)
         name = re.sub(r'-+|_+|\s+',' ',m.group(2))
         if os.path.isdir(folderName):
-            shutil.move(i, folderName + '/' + name)
+            shutil.move(i, os.join(folderName,name))
         else:
             os.mkdir(folderName)
-            shutil.move(i,folderName + '/' +name)
+            shutil.move(i,os.join(folderName,name))
